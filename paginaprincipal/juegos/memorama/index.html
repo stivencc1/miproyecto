@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memorama</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- MENÚ INICIAL -->
+
+    <div class="menu" id="menu">
+
+        <h1>🧠 MEMORAMA</h1>
+
+        <p>¡Encuentra todas las parejas antes de que se acabe el tiempo!</p>
+
+        <label for="gamenick">🎮 GameNick</label>
+
+        <input type="text" id="gamenick" placeholder="Ingresa tu GameNick">
+
+        <h3>😀 Elige tu avatar</h3>
+
+        <div class="avatares">
+
+            <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Alex" class="avatar avatar-seleccionado"
+                onclick="seleccionarAvatar(this)" data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Alex">
+
+            <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Max" class="avatar"
+                onclick="seleccionarAvatar(this)" data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Max">
+
+            <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Luna" class="avatar"
+                onclick="seleccionarAvatar(this)" data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Luna">
+
+            <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Nova" class="avatar"
+                onclick="seleccionarAvatar(this)" data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Nova">
+
+            <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Leo" class="avatar"
+                onclick="seleccionarAvatar(this)" data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Leo">
+
+        </div>
+
+        <h3>⏱ Tiempo máximo</h3>
+
+        <select id="tiempoMax">
+
+            <option value="30">30 segundos</option>
+
+            <option value="60">60 segundos</option>
+
+            <option value="90">90 segundos</option>
+
+            <option value="120">120 segundos</option>
+
+        </select>
+
+        <h3>🃏 Cantidad de parejas</h3>
+
+        <select id="cantidadParejas">
+
+            <option value="8">8 parejas</option>
+
+            <option value="12">12 parejas</option>
+
+            <option value="18">18 parejas</option>
+
+        </select>
+
+        <h3>👁 Tiempo para memorizar</h3>
+
+        <select id="tiempoMemorizar">
+
+            <option value="3">3 segundos</option>
+
+            <option value="5">5 segundos</option>
+
+            <option value="8">8 segundos</option>
+
+        </select>
+
+        <br><br>
+
+        <button id="btnComenzar">
+
+            ▶ COMENZAR
+
+        </button>
+
+    </div>
+
+
+
+    <!-- JUEGO -->
+
+    <div class="contenedor" id="juego" style="display:none;">
+
+        <h1>🧠 MEMORAMA</h1>
+
+
+        <div id="juego">
+
+            <div class="zonaJuego">
+
+                <div class="panelLateral">
+
+                    <h2>🎮 JUGADOR</h2>
+
+                    <img id="avatarJugador" src="https://api.dicebear.com/7.x/adventurer/svg?seed=Alex">
+
+                    <h3 id="nombreJugador">GameNick</h3>
+
+                    <hr>
+
+                    <p>⏱ Tiempo</p>
+
+                    <h2 id="tiempo">00:00</h2>
+
+                    <p>🎯 Intentos</p>
+
+                    <h2 id="intentos">0</h2>
+
+                    <button onclick="reiniciar(cantidadParejasSeleccionada)">
+                        🔄 Reiniciar
+                    </button>
+
+                    <button onclick="location.href='../../index.html'">
+                        🏠 Inicio
+                    </button>
+
+                </div>
+
+                <div id="tablero"></div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portal Game</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>🎮 PORTAL GAME</h1>
+
+        <p>¡Elige un videojuego para comenzar!</p>
+
+    </header>
+
+    <main>
+
+        <div class="contenedor">
+
+            <div class="card">
+
+                <h2>🎯 Adivina el Número</h2>
+
+                <p>
+                    Intenta descubrir el número secreto antes de quedarte sin intentos.
+                </p>
+
+                <button onclick="abrirJuego('juegos/adivina/index.html')">
+                    Jugar
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🧠 Memorama</h2>
+
+                <p>
+                    Encuentra todas las parejas antes que el tiempo se agote y demuestra tu memoria.
+                </p>
+
+                <button onclick="abrirJuego('juegos/memorama/index.html')">
+                    Jugar
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <h2>✂ Piedra Papel Tijera</h2>
+
+                <p>
+                    Compite contra la computadora.
+                </p>
+
+                <button disabled>
+                    Próximamente
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🐍 Snake</h2>
+
+                <p>
+                    Consigue el mayor puntaje posible.
+                </p>
+
+                <button disabled>
+                    Próximamente
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+    <section class="ranking">
+
+        <h2>🏆 Ranking Global</h2>
+
+        <table id="rankingGlobal">
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+                    <th>Jugador</th>
+                    <th>Victorias</th>
+                    <th>Intentos</th>
+                    <th>Efectividad</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

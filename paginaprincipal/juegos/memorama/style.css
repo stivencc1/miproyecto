@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+
+    background: linear-gradient(135deg, #171a21, #1b2838, #2a475e);
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+}
+
+.contenedor {
+
+    width: 95%;
+
+    max-width: 700px;
+
+    margin: 40px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+h1 {
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 0 15px cyan;
+
+}
+
+/*-------------------------
+        MENÚ
+--------------------------*/
+
+.menu {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background: linear-gradient(145deg, #2a475e, #1b2838);
+
+    border-radius: 20px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, .4);
+
+    text-align: center;
+
+}
+
+.menu input {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    padding: 15px;
+
+    margin: 15px auto;
+
+    display: block;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+
+}
+
+.menu select {
+
+    width: 320px;
+
+    padding: 12px;
+
+    margin: 10px auto;
+
+    display: block;
+
+    font-size: 20px;
+
+    border-radius: 10px;
+
+}
+
+/*-------------------------
+      AVATARES
+--------------------------*/
+
+.avatares {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin: 20px 0;
+
+}
+
+.avatar {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    padding: 6px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 4px solid transparent;
+
+    transition: .3s;
+
+}
+
+.avatar:hover {
+
+    transform: scale(1.08);
+
+    background: rgba(255, 255, 255, .15);
+
+}
+
+.avatar-seleccionado {
+
+    border: 4px solid gold;
+
+    box-shadow:
+
+        0 0 10px gold,
+
+        0 0 20px gold;
+
+    transform: scale(1.08);
+
+}
+
+/*-------------------------
+       BOTONES
+--------------------------*/
+
+button {
+
+    margin-top: 25px;
+
+    padding: 15px 35px;
+
+    font-size: 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2196f3;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 15px cyan;
+
+}
+
+#btnComenzar {
+
+    padding: 15px 40px;
+
+    font-size: 22px;
+
+}
+
+/*-------------------------
+       INFO
+--------------------------*/
+
+.info {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    margin-bottom: 25px;
+
+    font-size: 22px;
+
+}
+
+/*-------------------------
+      TABLERO
+--------------------------*/
+
+#tablero {
+
+    display: grid;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    transition: .3s;
+
+}
+
+.carta {
+
+    width: 90px;
+
+    height: 90px;
+
+    background: #66c0f4;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.carta:hover {
+
+    transform: scale(1.05);
+
+}
+
+.oculta {
+
+    background: #2a475e;
+
+    color: transparent;
+
+}
+
+.encontrada {
+
+    background: #00c853;
+
+    pointer-events: none;
+
+}
+
+/*-------------------------
+     RESPONSIVE
+--------------------------*/
+
+@media(max-width:700px) {
+
+    h1 {
+
+        font-size: 35px;
+
+    }
+
+    .info {
+
+        font-size: 18px;
+
+    }
+
+    #tablero {
+
+        grid-template-columns: repeat(4, 70px);
+
+        justify-content: center;
+
+    }
+
+    .carta {
+
+        width: 70px;
+
+        height: 70px;
+
+        font-size: 32px;
+
+    }
+
+    .avatar {
+
+        width: 60px;
+
+        height: 60px;
+
+    }
+
+    .menu input {
+
+        width: 95%;
+
+    }
+
+}
+
+/* ========================= */
+/* ZONA DEL JUEGO */
+/* ========================= */
+
+.zonaJuego {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 40px;
+
+    width: 100%;
+
+}
+
+/* ========================= */
+
+.panelLateral {
+
+    width: 230px;
+
+    background: #1b2838;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 0 20px rgba(0, 255, 255, .2);
+
+}
+
+.panelLateral h2 {
+
+    margin: 10px;
+
+}
+
+.panelLateral img {
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: white;
+
+}
+
+.panelLateral button {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+}
+
+/* ========================= */
+
+#tablero {
+
+    display: grid;
+
+    gap: 12px;
+
+    justify-content: center;
+
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Número</title>
+
+    <!-- FUENTES MÁS ELEGANTES -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div class="contenedor-principal">
+
+        <!-- PANEL JUEGO -->
+        <div class="juego">
+
+            <h1>🎯 Adivina el Número</h1>
+
+            <p>
+                Configura el rango numérico, selecciona la cantidad
+                máxima de intentos e intenta adivinar el número secreto.
+                Mientras menos intentos uses y mayor sea la dificultad,
+                más puntos obtendrás.
+            </p>
+
+            <label>🎮 GameNick</label>
+            <input type="text" id="gamenick" placeholder="Ingresa tu apodo">
+            <label>🧑 Selecciona un avatar</label>
+
+            <div class="contenedor-avatares">
+
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Alex" class="avatar avatar-seleccionado"
+                    onclick="seleccionarAvatar(this)"
+                    data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Alex">
+
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Max" class="avatar"
+                    onclick="seleccionarAvatar(this)"
+                    data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Max">
+
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Luna" class="avatar"
+                    onclick="seleccionarAvatar(this)"
+                    data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Luna">
+
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Nova" class="avatar"
+                    onclick="seleccionarAvatar(this)"
+                    data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Nova">
+
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Leo" class="avatar"
+                    onclick="seleccionarAvatar(this)"
+                    data-avatar="https://api.dicebear.com/7.x/adventurer/svg?seed=Leo">
+
+            </div>
+
+            <label>🎯 Número máximo de intentos</label>
+            <input type="number" id="maxIntentosInput" min="1" max="100" value="10">
+
+            <label>🎲 Rango mínimo</label>
+            <input type="number" id="minNumero" value="1">
+
+            <label>🎲 Rango máximo</label>
+            <input type="number" id="maxNumero" value="100">
+
+            <label>🔢 Adivina el número</label>
+            <input type="number" id="adivinanza">
+
+            <button class="btn-jugar" onclick="adivinar()">
+                Adivinar
+            </button>
+
+            <div class="resultado" id="resultado"></div>
+            <div class="resultado" id="intentos"></div>
+
+        </div>
+
+        <!-- PANEL TABLAS -->
+        <div class="panel-tablas">
+
+            <!-- TABLA GANADORES -->
+            <div class="tabla-box">
+
+                <h2>🏆 Mejores Jugadores</h2>
+
+                <table id="tablaPosiciones">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Jugador</th>
+                            <th>Intentos</th>
+                            <th>Rango</th>
+                            <th>Puntos</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+            </div>
+
+            <!-- TABLA PERDEDORES -->
+            <div class="tabla-box">
+
+                <h2>💀 Jugadores Eliminados</h2>
+
+                <table id="tablaPerdedores">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Jugador</th>
+                            <th>Intentos</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+            </div>
+
+            <!-- BOTONES -->
+            <div class="admin-botones">
+
+                <button class="btn-ganadores" onclick="limpiarGanadores()">
+
+                    🏆 Limpiar Ganadores
+
+                </button>
+
+                <button class="btn-perdedores" onclick="limpiarPerdedores()">
+
+                    💀 Limpiar Perdedores
+
+                </button>
+
+                <button class="btn-todo" onclick="limpiarTodo()">
+
+                    🗑 Limpiar Todo
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
